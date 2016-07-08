@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Design Patterns",
+        "value": 34.64,
+        "description": "Description 1"
+    },
+    {
+        "id": 2,
+        "name": "Code clean",
+        "value": 54.64,
+        "description": "Description 2"
+    },
+    {
+        "id": 3,
+        "name": "Service Patterns",
+        "value": 84.64,
+        "description": "Description 3"
+    },
+    {
+        "id": 4,
+        "name": "Refactoring",
+        "value": 14.64,
+        "description": "Description 4"
+    },
+    {
+        "id": 5,
+        "name": "Micro services",
+        "value": 1940.64,
+        "description": "Description 5"
+    }
+]

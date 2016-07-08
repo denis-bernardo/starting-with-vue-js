@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Books</title>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container" id="hello">
+            <div class="row">
+                <h1>{{msg}}</h1>
+                <input type="text" class="form-control" v-model="msg">
+            </div>
+            <div class="row">
+                <h2>My list</h2>
+                <ul>
+                    <li v-for="person in people">
+                        {{person.name}}
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <h3>My list of elements</h3>
+                <input type="text" class="form-control" v-model="newElement" v-on:keyup.enter="addElement">
+                <ul>
+                    <li v-for="element in elements">
+                        {{element.title}}
+                        <a href="javascript:void(0)" class="btn" v-on:click="removeElement($event, $index)">X</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <h3>v-on</h3>
+                <button v-on:click="myClick">Click</button>
+                <button @click="myClick">@Click</button>
+                <input type="text" v-on:keyup.enter="myKeyUp" placeholder="keyUp">
+            </div>
+            <div class="row">
+                <h3>v-bind</h3>
+                <p v-bind:class="{'text-danger': 2 === 1, 'text-info': true}">text</p>
+                <p :class="{'text-danger': 2 === 1, 'text-info': true}">:text</p>
+                <p :style="{'font-size': 30 + 'px'}">:text</p>
+                <p :style="[objectA, objectB]">Objects A and B</p>
+                <p v-bind:="{id: 1 === 1, name: true}">bind attribute</p>
+            </div>
+            <div class="row">
+                <h3>v-model</h3>
+                <ul>
+                    <li v-for="myList in myListForm">
+                        {{myList.name}} - {{myList.email}}
+                    </li>
+                </ul>
+                <input type="text" v-model="myForm.name" placeholder="Name">
+                <input type="text" v-model="myForm.email" placeholder="Email">
+                <button v-on:click="addForm">Add</button>
+            </div>
+        </div>
+        <script src="node_modules/vue/dist/vue.js"></script>
+        <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
+        <script src="js/appExamples.js"></script>
+    </body>
+</html>
